@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Wardrobe</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5 text-center">Virtual Wardrobe</h1>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="addItem-tab" data-toggle="tab" href="#addItem" role="tab" aria-controls="addItem" aria-selected="true">Add Item</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="addOutfit-tab" data-toggle="tab" href="#addOutfit" role="tab" aria-controls="addOutfit" aria-selected="false">Add Outfit</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+      <!-- Add Item Tab -->
+      <div class="tab-pane fade show active" id="addItem" role="tabpanel" aria-labelledby="addItem-tab">
+        <div class="mb-4">
+          <h2>Add Clothing Item</h2>
+          <form id="itemForm" class="mb-4">
+            <div class="form-group">
+              <label for="itemName">Item Name</label>
+              <input type="text" id="itemName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="itemCategory">Category</label>
+              <select id="itemCategory" class="form-control" required>
+                <option value="Top">Top</option>
+                <option value="Bottom">Bottom</option>
+                <option value="Footwear">Footwear</option>
+                <option value="Accessory">Accessory</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="itemColor">Color</label>
+              <input type="text" id="itemColor" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="itemSize">Size</label>
+              <input type="text" id="itemSize" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="itemImage">Image URL</label>
+              <input type="url" id="itemImage" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Item</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Add Outfit Tab -->
+      <div class="tab-pane fade" id="addOutfit" role="tabpanel" aria-labelledby="addOutfit-tab">
+        <div class="mb-4">
+          <h2>Create Outfit</h2>
+          <form id="outfitForm" class="mb-4">
+            <div class="form-group">
+              <label for="outfitName">Outfit Name</label>
+              <input type="text" id="outfitName" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="outfitItems">Select Items</label>
+              <select id="outfitItems" class="form-control" multiple required></select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Create Outfit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <h2>My Wardrobe</h2>
+      <ul id="itemList" class="list-group"></ul>
+    </div>
+    <div class="mb-4">
+      <h2>My Outfits</h2>
+      <ul id="outfitList" class="list-group"></ul>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
